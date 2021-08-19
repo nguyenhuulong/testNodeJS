@@ -5,8 +5,14 @@ let router = express.Router()
 
 let initWebRoutes = (app) => {
     router.get('/', homeController.getHomePage)
-    //rest api: GET POST UPDATE DELETE
     router.get('/about', homeController.getAboutPage)
+    router.get('/crud', homeController.getCRUD)
+    router.post('/post-crud', homeController.postCRUD)
+    router.get('/display-crud', homeController.displayCRUD)
+    router.get('/edit-crud', homeController.editCRUD)
+    router.post('/put-crud', homeController.putCRUD)
+    router.get('/delete-crud', homeController.deleteCRUD)
+
     return app.use("/", router)
 }
 
